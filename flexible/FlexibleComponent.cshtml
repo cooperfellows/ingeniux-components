@@ -1,0 +1,8 @@
+﻿@model Ingeniux.Runtime.ICMSElement
+@using Ingeniux.Runtime	
+<div class="component">	
+    <h4>@Model.GetElementValue("Title")</h4>
+    <div>
+        @Html.Raw(Model.GetElementValue("BodyCopy"))
+    </div>        
+</div>

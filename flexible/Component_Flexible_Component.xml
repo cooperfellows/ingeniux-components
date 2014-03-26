@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:dt="urn:schemas-microsoft-com:datatypes" name="FlexibleComponent" xmlns="urn:schemas-microsoft-com:xml-data">
+  <AttributeType name="ID" dt:type="id" required="yes" />
+  <AttributeType name="Name" dt:type="string" required="yes" />
+  <AttributeType name="UniqueID" dt:type="int" default="97" />
+  <AttributeType name="Icon" dt:type="int" default="11" />
+  <AttributeType name="FriendlyName" dt:type="string" default="Flexible Component" />
+  <AttributeType name="SS" dt:type="boolean" default="false" />
+  <AttributeType name="DSS" dt:type="boolean" default="true" />
+  <AttributeType name="WF" dt:type="boolean" default="false" />
+  <AttributeType name="DefaultWorkFlowDefID" dt:type="int" default="" />
+  <AttributeType name="DefaultCategorization" dt:type="string" default="" />
+  <AttributeType name="Version" dt:type="int" default="4" />
+  <AttributeType name="LastModifiedUser" dt:type="string" default="uww\vrabelc" />
+  <ElementType name="Exports" content="textOnly" />
+  <ElementType name="Title" dt:type="string" content="textOnly" />
+  <ElementType name="xhtml_BodyCopy" content="textOnly" />
+  <ElementType name="FlexibleComponent" content="eltOnly" order="seq">
+    <attribute type="ID" />
+    <attribute type="Name" />
+    <element type="Title" label="Title" readonly="false" hidden="false" required="false" />
+    <element type="xhtml_BodyCopy" label="Body Copy" readonly="false" hidden="false" required="true" Height="" />
+  </ElementType>
+</Schema>
