@@ -1,0 +1,16 @@
+﻿@model Ingeniux.Runtime.ICMSElement
+@using Ingeniux.Runtime
+@{
+    ICMSElement image = Model.Element("Image");
+    ICMSElement caption = Model.Element("Caption");
+    ICMSElement link = Model.Element("Page");
+    <div class="call-to-action">
+    @if (caption != null) {
+        @_UwwHelpers.RenderCaptionImageLink(link, Url, image, caption,"img-responsive")
+    } 
+    else
+    {            
+        @_Helpers.RenderImageLink(link, Url, image,"img-responsive")
+    }
+    </div>
+}

@@ -1,0 +1,26 @@
+
+/// <summary>
+/// renders a link wrapped around a Image and optional caption 
+/// </summary>
+/// <param name="Link">ICMSElement</param>
+/// <param name="urlHelper">UrlHelper</param>
+/// <param name="imageElt">ICMSElement</param>
+/// <param name="captionElt">ICMSElement</param>
+/// <param name="imgClass">String</param>
+/// <param name="width">INT</param>
+@helper RenderCaptionImageLink(ICMSElement link, UrlHelper urlHelper, ICMSElement imageElt, ICMSElement captionElt, String imgClass = "", int width = 0)
+	{
+		if (link != null && urlHelper != null)
+		{
+			string targetStr = (!String.IsNullOrEmpty(link.GetAttributeValue("Target"))) ? string.Format("target=\"{0}\"", link.Attribute("Target").Value) : "";
+			String linkUrl = (link.URL.StartsWith("http")) ? link.URL : urlHelper.Content("~/" + link.URL); //_Functions.GetLinkAction(link, urlHelper);
+	        <a href="@linkUrl" @MvcHtmlString.Create(targetStr)>@_Helpers.RenderImage(imageElt, urlHelper, imgClass, width)</a>
+            if(captionElt != null) {
+                <span>@captionElt.Value</span>
+            }
+		}
+		else
+		{
+	        @_Helpers.RenderImage(imageElt, urlHelper, imgClass, width)
+		}	
+}

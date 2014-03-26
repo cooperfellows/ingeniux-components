@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:dt="urn:schemas-microsoft-com:datatypes" name="CallToActionComponent" xmlns="urn:schemas-microsoft-com:xml-data">
+  <AttributeType name="ID" dt:type="id" required="yes" />
+  <AttributeType name="Name" dt:type="string" required="yes" />
+  <AttributeType name="UniqueID" dt:type="int" default="98" />
+  <AttributeType name="Icon" dt:type="int" default="11" />
+  <AttributeType name="FriendlyName" dt:type="string" default="Call To Action Component" />
+  <AttributeType name="SS" dt:type="boolean" default="false" />
+  <AttributeType name="DSS" dt:type="boolean" default="true" />
+  <AttributeType name="WF" dt:type="boolean" default="false" />
+  <AttributeType name="DefaultWorkFlowDefID" dt:type="int" default="" />
+  <AttributeType name="DefaultCategorization" dt:type="string" default="" />
+  <AttributeType name="Version" dt:type="int" default="3" />
+  <AttributeType name="LastModifiedUser" dt:type="string" default="uww\herronj" />
+  <ElementType name="Exports" content="textOnly" />
+  <ElementType name="Image" dt:type="imagefile" content="textOnly" />
+  <ElementType name="Caption" dt:type="string" content="textOnly" />
+  <ElementType name="xpowerlink_Link" content="eltOnly" />
+  <ElementType name="CallToActionComponent" content="eltOnly" order="seq">
+    <attribute type="ID" />
+    <attribute type="Name" />
+    <element type="Image" label="Image (width = YY pixels, height can be anything)" readonly="false" hidden="false" required="false" Expanded="false" Width="" Height="" Border="" HSpace="" VSpace="" Alignment="" />
+    <element type="Caption" label="Caption" readonly="false" hidden="false" required="false" />
+    <element type="xpowerlink_Link" label="Link" readonly="false" hidden="false" required="true" Expanded="false" Link="" LinkText="" URL="" Target="" />
+  </ElementType>
+</Schema>
