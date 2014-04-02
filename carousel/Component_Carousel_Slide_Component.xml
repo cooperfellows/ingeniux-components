@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:dt="urn:schemas-microsoft-com:datatypes" name="CarouselSlideComponent" xmlns="urn:schemas-microsoft-com:xml-data">
+  <AttributeType name="ID" dt:type="id" required="yes" />
+  <AttributeType name="Name" dt:type="string" required="yes" />
+  <AttributeType name="UniqueID" dt:type="int" default="117" />
+  <AttributeType name="Icon" dt:type="int" default="11" />
+  <AttributeType name="FriendlyName" dt:type="string" default="Carousel Slide Component" />
+  <AttributeType name="SS" dt:type="boolean" default="false" />
+  <AttributeType name="DSS" dt:type="boolean" default="true" />
+  <AttributeType name="WF" dt:type="boolean" default="false" />
+  <AttributeType name="DefaultWorkFlowDefID" dt:type="int" default="" />
+  <AttributeType name="DefaultCategorization" dt:type="string" default="" />
+  <AttributeType name="Version" dt:type="int" default="1" />
+  <ElementType name="Exports" content="textOnly" />
+  <ElementType name="PanelImage" dt:type="imagefile" content="textOnly" />
+  <ElementType name="PanelTitle" dt:type="string" content="textOnly" />
+  <ElementType name="xpowerlink_PanelLink" content="eltOnly" />
+  <ElementType name="CarouselSlideComponent" content="eltOnly" order="seq">
+    <attribute type="ID" />
+    <attribute type="Name" />
+    <element type="PanelImage" label="Panel Image" readonly="false" hidden="false" required="false" Expanded="false" Width="" Height="" Border="" HSpace="" VSpace="" Alignment="" />
+    <element type="PanelTitle" label="Panel Title" readonly="false" hidden="false" required="false" />
+    <element type="xpowerlink_PanelLink" label="Panel Link" readonly="false" hidden="false" required="false" Expanded="false" Link="" LinkText="" URL="" Target="" />
+  </ElementType>
+</Schema>

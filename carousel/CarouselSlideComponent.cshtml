@@ -1,0 +1,21 @@
+﻿@model Ingeniux.Runtime.ICMSElement
+@using Ingeniux.Runtime
+
+@{
+    var slide = Model;
+    string id = ViewData["id"].ToString();
+  
+}
+@if (id == "0")
+{
+    @:<div class="item active">
+}
+else
+{
+    @:<div class="item">
+}
+    @_Helpers.RenderImage(slide.Element("PanelImage"),Url)
+    <div class="carousel-caption">
+	    @_Helpers.RenderCMSLink(slide.GetLinkItem("PanelLink"),Url,false,slide.GetElementValue("PanelTitle"))
+    </div>
+</div>

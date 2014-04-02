@@ -1,0 +1,42 @@
+﻿@model Ingeniux.Runtime.ICMSElement
+@using Ingeniux.Runtime
+
+@{
+    // model variables
+    var carousel = Model;
+    var slides = carousel.Elements("CarouselSlideComponent");
+}
+
+<div id="carousel" class="carousel slide page__carousel effects__drop-shadow" data-ride="carousel">
+	<!-- Indicators -->
+	<ol class="carousel-indicators">
+    @for (var i = 0; i < slides.Count(); i++) 
+    {
+        if (i == 0) {
+            <li data-target="#carousel" data-slide-to="@i.ToString()" class="active"></li>
+        }
+        else
+        {
+            <li data-target="#carousel" data-slide-to="@i.ToString()"></li>
+        }
+    }	
+	</ol>
+
+	<!-- Wrapper for slides -->
+	<div class="carousel-inner">
+    @for(var s = 0; s < slides.Count(); s++)
+    {
+        // render each slide
+        Html.RenderPartial("Components/CarouselSlideComponent", slides.ElementAt(s),new ViewDataDictionary{{"id",s}});   
+    }
+    </div>
+
+	<!-- Controls -->
+	<a class="left carousel-control" href="#carousel" data-slide="prev">
+	    <span class="icon-prev"></span>
+	</a>
+	<a class="right carousel-control" href="#carousel" data-slide="next">
+	    <span class="icon-next"></span>
+	</a>
+</div>
+
