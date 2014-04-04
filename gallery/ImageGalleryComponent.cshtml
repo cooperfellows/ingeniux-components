@@ -1,0 +1,59 @@
+﻿@model Ingeniux.Runtime.ICMSElement
+@using Ingeniux.Runtime
+@* 
+    will need to detect single or thumbs
+    elements [ SplashImage <IMG>, ShowThumbnails <BOOL>, Images <list> ]
+*@
+@{
+    string title = Model.GetElementValue("GalleryTitle");
+    var images = Model.Elements("GalleryItem");
+    var thumbnails = Model.GetElementValue("ShowThumbnails");
+    var i=0;
+    var count = images.Count();
+
+    if (!title.IsNullOrEmpty())
+    {
+        <h4>@title</h4>
+    }
+
+    if (thumbnails == "false")
+    {
+        <div class="gallery--single">
+            <a href="#" class="gallery__splash">@_Helpers.RenderImage(Model.Element("SplashImage"), Url)</a>
+            <script>
+                var imageList = [
+                @foreach (ICMSElement image in images) {
+                    var imageUrl = "Images/"+image.Value;
+                    if (++i==count){
+                        <text>
+                        {
+                            href: "@Url.Asset(imageUrl,Model)",
+                            title: '@image.GetAttributeValue("AlternateText")'
+                        }</text>
+                    }
+                    else
+                    {
+                        <text>
+                        {
+                            href: "@Url.Asset(imageUrl,Model)",
+                            title: '@image.GetAttributeValue("AlternateText")'
+                        },</text>
+                    }   
+                }
+                ];
+            </script>
+        </div>
+    }
+    else
+    {
+        <div class="gallery">
+            @foreach (ICMSElement image in images)
+            {
+                var imageUrl = "Images/" + image.Value;
+                <a class="gallery__item" rel="gallery" href="@Url.Asset(imageUrl, Model)">
+                    @_Helpers.RenderImage(image, Url,"img-responsive")
+                </a>
+            }
+        </div>
+    }
+}

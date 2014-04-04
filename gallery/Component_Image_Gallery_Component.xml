@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:dt="urn:schemas-microsoft-com:datatypes" name="ImageGalleryComponent" xmlns="urn:schemas-microsoft-com:xml-data">
+  <AttributeType name="ID" dt:type="id" required="yes" />
+  <AttributeType name="Name" dt:type="string" required="yes" />
+  <AttributeType name="UniqueID" dt:type="int" default="116" />
+  <AttributeType name="Icon" dt:type="int" default="3" />
+  <AttributeType name="FriendlyName" dt:type="string" default="Image Gallery Component" />
+  <AttributeType name="SS" dt:type="boolean" default="false" />
+  <AttributeType name="DSS" dt:type="boolean" default="true" />
+  <AttributeType name="WF" dt:type="boolean" default="false" />
+  <AttributeType name="DefaultWorkFlowDefID" dt:type="int" default="" />
+  <AttributeType name="DefaultCategorization" dt:type="string" default="" />
+  <AttributeType name="Version" dt:type="int" default="1" />
+  <AttributeType name="LastModifiedUser" dt:type="string" default="" />
+  <ElementType name="Exports" content="textOnly" />
+  <ElementType name="GalleryTitle" dt:type="string" content="textOnly" />
+  <ElementType name="ShowThumbnails" dt:type="boolean" content="textOnly" />
+  <ElementType name="SplashImage" dt:type="imagefile" content="textOnly" />
+  <ElementType name="xpowerlist_GalleryImages" content="eltOnly" />
+  <ElementType name="GalleryItem" dt:type="imagefile" content="textOnly" />
+  <ElementType name="ImageGalleryComponent" content="eltOnly" order="seq">
+    <attribute type="ID" />
+    <attribute type="Name" />
+    <element type="GalleryTitle" label="Gallery Title" readonly="false" hidden="false" required="false" />
+    <element type="ShowThumbnails" label="Show Thumbnails" readonly="false" hidden="false" required="false" />
+    <element type="SplashImage" label="Splash Image" readonly="false" hidden="false" required="false" Expanded="false" Width="" Height="" Border="" HSpace="" VSpace="" Alignment="" />
+    <element type="xpowerlist_GalleryImages" label="Gallery Images" readonly="false" hidden="false" required="false" Expanded="true" List="GalleryItem" Width="" Height="" Border="" HSpace="" VSpace="" Alignment="" />
+  </ElementType>
+</Schema>
