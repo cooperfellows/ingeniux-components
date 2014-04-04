@@ -10,8 +10,8 @@
   <AttributeType name="WF" dt:type="boolean" default="false" />
   <AttributeType name="DefaultWorkFlowDefID" dt:type="int" default="" />
   <AttributeType name="DefaultCategorization" dt:type="string" default="" />
-  <AttributeType name="Version" dt:type="int" default="4" />
-  <AttributeType name="LastModifiedUser" dt:type="string" default="uww\vrabelc" />
+  <AttributeType name="Version" dt:type="int" default="1" />
+  <AttributeType name="LastModifiedUser" dt:type="string" default="" />
   <ElementType name="Exports" content="textOnly" />
   <ElementType name="Title" dt:type="string" content="textOnly" />
   <ElementType name="xhtml_BodyCopy" content="textOnly" />

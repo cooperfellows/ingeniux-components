@@ -11,7 +11,7 @@
   <AttributeType name="DefaultWorkFlowDefID" dt:type="int" default="" />
   <AttributeType name="DefaultCategorization" dt:type="string" default="" />
   <AttributeType name="Version" dt:type="int" default="3" />
-  <AttributeType name="LastModifiedUser" dt:type="string" default="uww\herronj" />
+  <AttributeType name="LastModifiedUser" dt:type="string" default="" />
   <ElementType name="Exports" content="textOnly" />
   <ElementType name="Image" dt:type="imagefile" content="textOnly" />
   <ElementType name="Caption" dt:type="string" content="textOnly" />
